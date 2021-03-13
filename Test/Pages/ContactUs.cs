@@ -26,6 +26,14 @@ namespace Test.Pages
         private IWebElement Message { get; set; }
         [FindsBy(How = How.XPath, Using = " //*[@id='center_column']/p[contains(.,'Your message has been successfully sent to our team.')]")]
         private IWebElement ConfirmationMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = " //*[@id='center_column']//li[contains(.,'The message cannot be blank.')]")]
+        private IWebElement ErrorMessage { get; set; }
+
+  
+
+
+
         public ContactUs()
         {
             PageFactory.InitElements(DriverContext.GetDriver<IWebDriver>(), this);
@@ -65,6 +73,12 @@ namespace Test.Pages
             Thread.Sleep(5000);
             Send.Click();
             Thread.Sleep(5000);
+            string ErrorMsg = ErrorMessage.Text;
+            Thread.Sleep(5000);
+            AssertHelper.AreEqual(ErrorMsg, "The message cannot be blank.");
+            Thread.Sleep(5000);
+
+
         }
     }
 }

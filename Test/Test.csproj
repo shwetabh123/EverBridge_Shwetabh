@@ -496,12 +496,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Data\TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\" />
     <Folder Include="Downloads\" />
     <Folder Include="Logs\" />
     <Folder Include="Report\" />

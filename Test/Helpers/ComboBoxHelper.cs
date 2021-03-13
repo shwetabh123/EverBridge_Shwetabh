@@ -15,40 +15,8 @@ namespace Test.Helpers
 
 
         private static SelectElement select;
-        private static WebDriverWait GetWebDriverWait(IWebDriver driver, TimeSpan timeout)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, timeout)
-            {
-                PollingInterval = TimeSpan.FromMilliseconds(250)
-            };
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-            return wait;
-        }
-
-
-        public static void SelectElementByIndexWitWait(By locator, int index)
-        {
-            WebDriverWait wait = GetWebDriverWait(DriverContext.GetDriver<IWebDriver>(), TimeSpan.FromSeconds(60));
-
-
-            IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(locator));
-            select = new SelectElement(element);
-            select.SelectByIndex(index);
-        }
-
+   
        
-
-        //public static void SelectElementByText(By locator, string visibletext)
-        //{
-        //    select = new SelectElement(GenericHelper.GetElement(locator));
-        //    select.SelectByText(visibletext);
-        //}
-
-        //public static void SelectElementByText(By locator, string visibletext)
-        //{
-        //    select = new SelectElement(DriverContext.GetDriver<IWebDriver>().FindElement(locator));
-        //    select.SelectByText(visibletext);
-        //}
 
         public static void SelectElementByText(IWebElement element, string visibletext)
         {
