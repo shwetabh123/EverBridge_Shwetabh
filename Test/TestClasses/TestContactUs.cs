@@ -61,5 +61,51 @@ namespace Test.TestClasses
                 }
             }
         }
+
+
+        [Test, Category("Regression"), Order(3)]
+        public void ReSubmitFormwithoutMessage()
+        {
+            int srow = ConfigReader.srow;
+            int erow = ConfigReader.erow;
+            for (int i = srow; i <= erow; i++)
+            {
+                try
+                {
+                    DriverContext.InitDriver(_browsertype);
+                    ContactUs c = new ContactUs();
+                    c.FillFormwithoutMessage(i);
+                    Thread.Sleep(5000);
+                    DriverContext.CloseDriver();
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+            }
+        }
+
+
+        [Test, Category("Regression"), Order(4)]
+        public void ReSubmitFormwithMessage()
+        {
+            int srow = ConfigReader.srow;
+            int erow = ConfigReader.erow;
+            for (int i = srow; i <= erow; i++)
+            {
+                try
+                {
+                    DriverContext.InitDriver(_browsertype);
+                    ContactUs c = new ContactUs();
+                    c.FillFormwithMessage(i);
+                    Thread.Sleep(5000);
+                    DriverContext.CloseDriver();
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+            }
+        }
     }
 }
