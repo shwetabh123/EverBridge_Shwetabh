@@ -42,13 +42,16 @@ namespace Test.Pages
         {
             var path = Directory.GetCurrentDirectory();
             string fileName = path+ "\\Test\\Data\\TestData.xlsx";
-            ExcelHelper eat = new ExcelHelper(fileName);
-            string strWorksheetName = eat.getExcelSheetName(fileName, 1);
-            ComboBoxHelper.SelectInDropDownByText(SubjectHeading, eat.GetCellData(strWorksheetName, "SubjectHeading", i));
+         //   ExcelHelper eat = new ExcelHelper(fileName);
+          //  string strWorksheetName = eat.getExcelSheetName(fileName, 1);
+           // ComboBoxHelper.SelectInDropDownByText(SubjectHeading, eat.GetCellData(strWorksheetName, "SubjectHeading", i));
+            ComboBoxHelper.SelectInDropDownByText(SubjectHeading, "Customer service1");
             Thread.Sleep(5000);
-            TextBoxHelper.ClearandTypeinTextBox(Emailaddress, eat.GetCellData(strWorksheetName, "Email address", i));
+           // TextBoxHelper.ClearandTypeinTextBox(Emailaddress, eat.GetCellData(strWorksheetName, "Email address", i));
+            TextBoxHelper.ClearandTypeinTextBox(Emailaddress, "shwetabh.srivastava@gmail.com");
             Thread.Sleep(5000);
-            TextBoxHelper.ClearandTypeinTextBox(OrderReference, eat.GetCellData(strWorksheetName, "Order Reference", i));
+            //TextBoxHelper.ClearandTypeinTextBox(OrderReference, eat.GetCellData(strWorksheetName, "Order Reference", i));
+            TextBoxHelper.ClearandTypeinTextBox(OrderReference, "AAAA");
             Thread.Sleep(5000);
             TextBoxHelper.ClearandTypeinTextBox(Message, "This is with Reference to My Order");
             Thread.Sleep(5000);
@@ -63,13 +66,16 @@ namespace Test.Pages
         {
             var path = Directory.GetCurrentDirectory();
             string fileName = path + "\\Test\\Data\\TestData.xlsx";
-            ExcelHelper eat = new ExcelHelper(fileName);
-            string strWorksheetName = eat.getExcelSheetName(fileName, 1);
-            ComboBoxHelper.SelectInDropDownByText(SubjectHeading, eat.GetCellData(strWorksheetName, "SubjectHeading", i));
+          //  ExcelHelper eat = new ExcelHelper(fileName);
+          //  string strWorksheetName = eat.getExcelSheetName(fileName, 1);
+          //  ComboBoxHelper.SelectInDropDownByText(SubjectHeading, eat.GetCellData(strWorksheetName, "SubjectHeading", i));
+            ComboBoxHelper.SelectInDropDownByText(SubjectHeading, "Customer service1");
             Thread.Sleep(5000);
-            TextBoxHelper.ClearandTypeinTextBox(Emailaddress, eat.GetCellData(strWorksheetName, "Email address", i));
+           // TextBoxHelper.ClearandTypeinTextBox(Emailaddress, eat.GetCellData(strWorksheetName, "Email address", i));
+            TextBoxHelper.ClearandTypeinTextBox(Emailaddress, "shwetabh.srivastava@gmail.com");
             Thread.Sleep(5000);
-            TextBoxHelper.ClearandTypeinTextBox(OrderReference, eat.GetCellData(strWorksheetName, "Order Reference", i));
+          //  TextBoxHelper.ClearandTypeinTextBox(OrderReference, eat.GetCellData(strWorksheetName, "Order Reference", i));
+            TextBoxHelper.ClearandTypeinTextBox(OrderReference, "AAAA");
             Thread.Sleep(5000);
             Send.Click();
             Thread.Sleep(5000);
